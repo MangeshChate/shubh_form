@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+    <navbar class="navbar bg-danger shadow p-4">
+        <div class="navbar-brand text-light fw-bold font-monospace ">WEB FORM</div>
+    </navbar>
+    <div class="container-fluid ">
+        <div class="row p-5 ">
+            <div class="col-lg-6 col-md-12 col-sm-12   p-3 ">
+                <form class="form font-monospace ">
+                    <h3 class="fw-bold font-monospace text-dark text-info-emphasis">Enter The Information</h3>
+                    <div class="container">
+                        <label for="fname" class="form-label mt-3">First Name</label>
+
+                        <input type="text" id="fname" class="form-control shadow" required>
+                        <label for="lname" class="form-label mt-3">Last Name</label>
+
+                        <input type="text" id="lname" class="form-control shadow" required>
+
+                        <label for="email" class="form-label mt-3">Email Adress</label>
+                        <input type="email" id="email" class="form-control shadow" required>
+
+                        <label for="address" class="form-label mt-3">Address Adress</label>
+                        <textarea type="text" id="address" class="form-control shadow" required></textarea>
+
+
+                        <label for="city" class="form-label mt-3">City</label>
+                        <input type="text" id="city" class="form-control shadow" required>
+
+                    </div>
+                </form>
+                <button class="btn btn-danger mt-5 shadow container-fluid " id="submit"
+                    onclick="userForm()">Submit</button>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12     p-3">
+                <div class="container show   font-monospace">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    const fname = document.querySelector('#fname');
+    const lname = document.querySelector('#lname');
+    const email = document.querySelector('#email');
+    const address = document.querySelector('#address');
+    const city = document.querySelector('#city');
+    const show = document.querySelector('.show');
+    const submit = document.querySelector('#submit')
+
+
+
+
+    submit.click(function (event) {
+
+        event.preventDefault();
+        userForm();
+
+
+
+    })
+
+    function userForm() {
+
+        show.innerHTML = `
+    <div>
+    
+        <h3 class="fw-bold font-monospace text-info-emphasis">Your Details</h3>
+
+        <div class="mt-5" style="font-size:1.5rem">
+            
+            <div class="mt-3">
+                <span class="fw-bold text-info-emphasis">First Name:</span>
+                <span>${fname.value}</span>
+            </div>
+            <div class="mt-3">
+                <span class="fw-bold text-info-emphasis">Last Name:</span>
+                <span>${lname.value}</span>
+            </div>
+            <div class="mt-3">
+                <span class="fw-bold text-info-emphasis">Email:</span>
+                <span>${email.value}</span>
+            </div>
+            <div class="mt-3">
+                <span class="fw-bold text-info-emphasis">Address:</span>
+                <span>${address.value}</span>
+            </div>
+            <div class="mt-3">
+                <span class="fw-bold text-info-emphasis">City:</span>
+                <span>${city.value}</span>
+            </div>
+        </div>
+    </div>
+
+
+`
+    }
+
+
+
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
